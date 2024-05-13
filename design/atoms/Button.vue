@@ -1,6 +1,5 @@
 <script setup>
 import './button.css'
-import { defineProps } from 'vue';
 
 const props = defineProps({
   label: {

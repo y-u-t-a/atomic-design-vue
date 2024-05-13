@@ -1,5 +1,4 @@
 <script setup>
-import { defineProps } from 'vue'
 import Header from 'design/organisms/Header.vue'
 
 defineProps({

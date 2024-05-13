@@ -1,6 +1,5 @@
 <script setup>
 import './header.css'
-import { defineProps } from 'vue'
 import Button from '../atoms/Button.vue'
 
 defineProps({
