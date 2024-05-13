@@ -9,6 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "design": "file:../../design"
+    "design": "workspace:design"
   }
 }
