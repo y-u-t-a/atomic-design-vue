@@ -12,7 +12,6 @@
     "vue": "^3.5.41"
   },
   "devDependencies": {
-    "@storybook/addon-links": "^10.5.10",
     "@storybook/vue3": "^10.5.10",
     "@storybook/vue3-vite": "^10.5.10",
     "storybook": "^10.5.10"
