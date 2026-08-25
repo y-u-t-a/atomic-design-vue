@@ -1,9 +1,10 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 import './page.css'
 import MyHeader from '../organisms/Header.vue'
+import type { User } from '../types'
 
-const user = ref(null)
+const user = ref<User | null>(null)
 
 function onLogin() {
   user.value = { name: 'Jane Doe' }

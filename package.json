@@ -13,5 +13,9 @@
       "version": "v24.19.0",
       "onFail": "download"
     }
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3",
+    "vue-tsc": "^3.3.11"
   }
 }

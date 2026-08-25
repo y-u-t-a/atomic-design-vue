@@ -1,11 +1,9 @@
-<script setup>
+<script setup lang="ts">
 import Header from 'design/organisms/Header.vue'
 
-defineProps({
-  pageName: {
-    type: String
-  }
-})
+defineProps<{
+  pageName?: string
+}>()
 
 function login() {
   alert('login')

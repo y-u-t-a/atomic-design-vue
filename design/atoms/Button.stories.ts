@@ -1,8 +1,15 @@
+import type { Meta, StoryObj } from '@storybook/vue3'
 import { fn } from 'storybook/test'
-import Button from './Button.vue'
+import Button, { type ButtonProps } from './Button.vue'
+
+// click は emit ではなくネイティブイベントのフォールスルーで親に届くため、
+// コンポーネントの props には現れない
+type ButtonArgs = ButtonProps & {
+  onClick?: (event: MouseEvent) => void
+}
 
 // More on how to set up stories at: https://storybook.js.org/docs/vue/writing-stories/introduction
-export default {
+const meta: Meta<ButtonArgs> = {
   title: 'design/atoms/Button',
   component: Button,
   tags: ['autodocs'],
@@ -17,36 +24,39 @@ export default {
       options: ['small', 'medium', 'large'],
     },
   },
-  // クリックは emit ではなくネイティブイベントのフォールスルーで親に届く
   args: {
     onClick: fn(),
   },
-};
+}
+
+export default meta
+
+type Story = StoryObj<ButtonArgs>
 
 // More on writing stories with args: https://storybook.js.org/docs/vue/writing-stories/args
-export const Primary = {
+export const Primary: Story = {
   args: {
     primary: true,
     label: 'Button',
   },
-};
+}
 
-export const Secondary = {
+export const Secondary: Story = {
   args: {
     label: 'Button',
   },
-};
+}
 
-export const Large = {
+export const Large: Story = {
   args: {
     size: 'large',
     label: 'Button',
   },
-};
+}
 
-export const Small = {
+export const Small: Story = {
   args: {
     size: 'small',
     label: 'Button',
   },
-};
+}

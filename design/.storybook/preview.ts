@@ -1,5 +1,6 @@
-/** @type { import('@storybook/vue3').Preview } */
-const preview = {
+import type { Preview } from '@storybook/vue3'
+
+const preview: Preview = {
   parameters: {
     controls: {
       matchers: {
@@ -8,6 +9,6 @@ const preview = {
       },
     },
   },
-};
+}
 
-export default preview;
+export default preview

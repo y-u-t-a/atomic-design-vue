@@ -1,19 +1,18 @@
-<script setup>
+<script setup lang="ts">
 import './header.css'
 import Button from '../atoms/Button.vue'
+import type { User } from '../types'
 
-defineProps({
-  title: {
-    type: String,
-    required: true
-  },
-  user: {
-    type: Object,
-    default: null
-  }
-})
+defineProps<{
+  title: string
+  user?: User | null
+}>()
 
-defineEmits(['login', 'logout', 'signUp'])
+defineEmits<{
+  login: []
+  logout: []
+  signUp: []
+}>()
 </script>
 
 <template>

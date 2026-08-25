@@ -1,34 +1,30 @@
-<script setup>
+<script setup lang="ts">
 import { computed } from 'vue'
 import './button.css'
 
-const props = defineProps({
-  label: {
-    type: String,
-    required: true,
-  },
-  primary: {
-    type: Boolean,
-    default: false,
-  },
-  size: {
-    type: String,
-    default: 'medium',
-    validator: (value) => ['small', 'medium', 'large'].includes(value),
-  },
-  backgroundColor: {
-    type: String,
-  },
-})
+export type ButtonSize = 'small' | 'medium' | 'large'
+
+export interface ButtonProps {
+  label: string
+  primary?: boolean
+  size?: ButtonSize
+  backgroundColor?: string
+}
+
+const {
+  primary = false,
+  size = 'medium',
+  backgroundColor,
+} = defineProps<ButtonProps>()
 
 const classes = computed(() => [
   'storybook-button',
-  props.primary ? 'storybook-button--primary' : 'storybook-button--secondary',
-  `storybook-button--${props.size}`,
+  primary ? 'storybook-button--primary' : 'storybook-button--secondary',
+  `storybook-button--${size}`,
 ])
 
 const style = computed(() => ({
-  backgroundColor: props.backgroundColor,
+  backgroundColor,
 }))
 </script>
 

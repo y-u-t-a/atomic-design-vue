@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 import Button from 'design/atoms/Button.vue'
 import PageTemplate from './components/PageTemplate.vue'
