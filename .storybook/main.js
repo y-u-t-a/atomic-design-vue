@@ -1,21 +1,17 @@
-import { dirname, join } from "path";
+import vue from "@vitejs/plugin-vue";
+
 /** @type { import('@storybook/vue3-vite').StorybookConfig } */
 const config = {
   stories: ["../design/**/*.stories.@(js|jsx|ts|tsx)"],
-  addons: [getAbsolutePath("@storybook/addon-links"), getAbsolutePath("@storybook/addon-essentials"), getAbsolutePath("@storybook/addon-interactions")],
+  addons: ["@storybook/addon-links"],
   framework: {
-    name: getAbsolutePath("@storybook/vue3-vite"),
+    name: "@storybook/vue3-vite",
     options: {}
   },
-  docs: {
-    autodocs: "tag"
-  }
+  // @storybook/vue3-vite v10 は @vitejs/plugin-vue を同梱しないため、明示的に追加する
+  viteFinal: (viteConfig) => ({
+    ...viteConfig,
+    plugins: [...(viteConfig.plugins ?? []), vue()]
+  })
 };
 export default config;
-/**
- * This function is used to resolve the absolute path of a package.
- * It is needed in projects that use Yarn PnP or are set up within a monorepo.
-*/
-function getAbsolutePath(value) {
-  return dirname(require.resolve(join(value, "package.json")));
-}

@@ -11,18 +11,21 @@
     "storybook": "storybook dev -p 6006"
   },
   "dependencies": {
-    "vue": "^3.2.47"
+    "vue": "^3.5.41"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.2.1",
-    "@storybook/addon-interactions": "^7.2.1",
-    "@storybook/addon-links": "^7.2.1",
-    "@storybook/blocks": "^7.2.1",
-    "@storybook/testing-library": "^0.2.0",
-    "@storybook/vue3": "^7.2.1",
-    "@storybook/vue3-vite": "^7.2.1",
-    "@vitejs/plugin-vue": "^4.1.0",
-    "storybook": "^7.2.1",
-    "vite": "^4.2.0"
+    "@storybook/addon-links": "^10.5.10",
+    "@storybook/vue3": "^10.5.10",
+    "@storybook/vue3-vite": "^10.5.10",
+    "@vitejs/plugin-vue": "^6.0.8",
+    "storybook": "^10.5.10",
+    "vite": "^8.2.2"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "v24.19.0",
+      "onFail": "download"
+    }
   }
 }
