@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import Button from 'design/atoms/Button.vue'
-import PageTemplate from './components/PageTemplate.vue'
+import PageTemplate from 'design/templates/PageTemplate.vue'
 
 const count = ref(0)
 
@@ -14,10 +14,23 @@ function reset() {
 function decrement() {
   count.value--
 }
+
+function login() {
+  alert('login')
+}
+
+function signup() {
+  alert('signup')
+}
 </script>
 
 <template>
-  <PageTemplate page-name="Counter">
+  <PageTemplate
+    site-title="app-1"
+    page-name="Counter"
+    @login="login"
+    @sign-up="signup"
+  >
     <div>
       <Button
         primary

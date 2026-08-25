@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import MyHeader from '../organisms/Header.vue'
+import PageTemplate from '../templates/PageTemplate.vue'
 import type { User } from '../types'
 
 const user = ref<User | null>(null)
@@ -19,15 +19,13 @@ function onSignUp() {
 </script>
 
 <template>
-  <article>
-    <MyHeader
-      title="Example"
-      :user="user"
-      @login="onLogin"
-      @logout="onLogout"
-      @sign-up="onSignUp"
-    />
-
+  <PageTemplate
+    site-title="Example"
+    :user="user"
+    @login="onLogin"
+    @logout="onLogout"
+    @sign-up="onSignUp"
+  >
     <section>
       <h2>Pages in Storybook</h2>
       <p>
@@ -76,7 +74,7 @@ function onSignUp() {
         Viewports addon in the toolbar
       </div>
     </section>
-  </article>
+  </PageTemplate>
 </template>
 
 <style scoped>
