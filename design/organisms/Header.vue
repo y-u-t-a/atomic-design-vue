@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import './header.css'
 import Button from '../atoms/Button.vue'
 import type { User } from '../types'
 
@@ -65,3 +64,41 @@ defineEmits<{
     </div>
   </header>
 </template>
+
+<style scoped>
+.wrapper {
+  font-family: var(--font-family-base);
+  border-bottom: 1px solid var(--color-border);
+  /* 15px はスケール外の光学調整値のためリテラルで保持する */
+  padding: 15px var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+svg {
+  display: inline-block;
+  vertical-align: top;
+}
+
+h1 {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-none);
+  /* 6px はスケール外の光学調整値のためリテラルで保持する */
+  margin: 6px 0 6px var(--space-3);
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Button の root 要素にも当コンポーネントの scope id が付与されるため機能する */
+button + button {
+  margin-left: var(--space-3);
+}
+
+.welcome {
+  color: var(--color-text);
+  font-size: var(--font-size-md);
+  margin-right: var(--space-3);
+}
+</style>

@@ -1,0 +1,70 @@
+/**
+ * デザイントークン
+ *
+ * 全コンポーネントの scoped CSS から var() で参照する。
+ * アプリのエントリ（apps/app-1/src/main.ts）と Storybook の preview.ts で
+ * 一度だけ読み込むこと。
+ */
+:root {
+  /* ---------------------------------------------------------------- */
+  /* Color: パレット                                                    */
+  /* ---------------------------------------------------------------- */
+  --color-blue-500: #1ea7fd;
+  --color-green-100: #e7fdd8;
+  --color-green-600: #66bf3c;
+  --color-gray-800: #333;
+  --color-white: #fff;
+
+  /* ---------------------------------------------------------------- */
+  /* Color: セマンティック                                              */
+  /* ---------------------------------------------------------------- */
+  --color-text: var(--color-gray-800);
+  --color-text-on-accent: var(--color-white);
+  --color-accent: var(--color-blue-500);
+  --color-link: var(--color-blue-500);
+  --color-surface-accent: var(--color-blue-500);
+  --color-badge-background: var(--color-green-100);
+  --color-badge-text: var(--color-green-600);
+  --color-border: rgba(0, 0, 0, 0.1);
+  --color-border-strong: rgba(0, 0, 0, 0.15);
+
+  /* ---------------------------------------------------------------- */
+  /* Typography                                                        */
+  /* ---------------------------------------------------------------- */
+  --font-family-base: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  --font-weight-bold: 700;
+
+  --font-size-2xs: 11px;
+  --font-size-xs: 12px;
+  --font-size-sm: 13px;
+  --font-size-md: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 32px;
+
+  --line-height-none: 1;
+  --line-height-tight: 12px;
+  --line-height-snug: 20px;
+  --line-height-base: 24px;
+
+  /* ---------------------------------------------------------------- */
+  /* Spacing                                                           */
+  /* ---------------------------------------------------------------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 10px;
+  --space-4: 12px;
+  --space-5: 16px;
+  --space-6: 20px;
+  --space-7: 24px;
+  --space-8: 30px;
+  --space-9: 40px;
+  --space-10: 48px;
+
+  /* ---------------------------------------------------------------- */
+  /* Radius                                                            */
+  /* ---------------------------------------------------------------- */
+  --radius-badge: 1em;
+  --radius-pill: 3em;
+}

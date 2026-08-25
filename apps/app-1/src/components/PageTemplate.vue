@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import 'design/tokens.css'
 import Header from 'design/organisms/Header.vue'
 
 defineProps<{

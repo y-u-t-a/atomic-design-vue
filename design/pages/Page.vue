@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import './page.css'
 import MyHeader from '../organisms/Header.vue'
 import type { User } from '../types'
 
@@ -79,3 +78,76 @@ function onSignUp() {
     </section>
   </article>
 </template>
+
+<style scoped>
+section {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-base);
+  padding: var(--space-10) var(--space-6);
+  margin: 0 auto;
+  max-width: 600px;
+  color: var(--color-text);
+}
+
+section h2 {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-2xl);
+  line-height: var(--line-height-none);
+  margin: 0 0 var(--space-1);
+  display: inline-block;
+  vertical-align: top;
+}
+
+section p {
+  margin: 1em 0;
+}
+
+section a {
+  text-decoration: none;
+  color: var(--color-link);
+}
+
+section ul {
+  padding-left: var(--space-8);
+  margin: 1em 0;
+}
+
+section li {
+  margin-bottom: var(--space-2);
+}
+
+section .tip {
+  display: inline-block;
+  border-radius: var(--radius-badge);
+  font-size: var(--font-size-2xs);
+  line-height: var(--line-height-tight);
+  font-weight: var(--font-weight-bold);
+  background: var(--color-badge-background);
+  color: var(--color-badge-text);
+  padding: var(--space-1) var(--space-4);
+  margin-right: var(--space-3);
+  vertical-align: top;
+}
+
+section .tip-wrapper {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-snug);
+  margin-top: var(--space-9);
+  margin-bottom: var(--space-9);
+}
+
+section .tip-wrapper svg {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  margin-right: var(--space-1);
+  vertical-align: top;
+  /* 3px はスケール外の光学調整値のためリテラルで保持する */
+  margin-top: 3px;
+}
+
+section .tip-wrapper svg path {
+  fill: var(--color-accent);
+}
+</style>
