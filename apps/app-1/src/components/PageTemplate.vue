@@ -19,8 +19,8 @@ function signup() {
 <template>
   <Header
     title="app-1"
-    :login-handler="login"
-    :sign-up-handler="signup"
+    @login="login"
+    @sign-up="signup"
   />
   <h1>{{ pageName }}</h1>
   <slot></slot>

@@ -1,6 +1,32 @@
+<script setup>
+import { ref } from 'vue'
+import './page.css'
+import MyHeader from '../organisms/Header.vue'
+
+const user = ref(null)
+
+function onLogin() {
+  user.value = { name: 'Jane Doe' }
+}
+
+function onLogout() {
+  user.value = null
+}
+
+function onSignUp() {
+  user.value = { name: 'Jane Doe' }
+}
+</script>
+
 <template>
   <article>
-    <my-header title="Example" :user="user" @login="onLogin" @logout="onLogout" @createAccount="onCreateAccount" />
+    <MyHeader
+      title="Example"
+      :user="user"
+      @login="onLogin"
+      @logout="onLogout"
+      @sign-up="onSignUp"
+    />
 
     <section>
       <h2>Pages in Storybook</h2>
@@ -52,32 +78,3 @@
     </section>
   </article>
 </template>
-
-<script>
-import './page.css';
-import MyHeader from '../organisms/Header.vue';
-
-export default {
-  name: 'my-page',
-
-  components: { MyHeader },
-
-  data() {
-    return {
-      user: null,
-    };
-  },
-
-  methods: {
-    onLogin() {
-      this.user = { name: 'Jane Doe' };
-    },
-    onLogout() {
-      this.user = null;
-    },
-    onCreateAccount() {
-      this.user = { name: 'Jane Doe' };
-    },
-  },
-};
-</script>

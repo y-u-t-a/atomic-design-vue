@@ -1,6 +1,7 @@
+import { fn } from 'storybook/test'
 import Button from './Button.vue'
 
-// More on how to set up stories at: https://storybook.js.org/docs/7.0/vue/writing-stories/introduction
+// More on how to set up stories at: https://storybook.js.org/docs/vue/writing-stories/introduction
 export default {
   title: 'design/atoms/Button',
   component: Button,
@@ -15,10 +16,14 @@ export default {
       },
       options: ['small', 'medium', 'large'],
     },
-  }
+  },
+  // クリックは emit ではなくネイティブイベントのフォールスルーで親に届く
+  args: {
+    onClick: fn(),
+  },
 };
 
-// More on writing stories with args: https://storybook.js.org/docs/7.0/vue/writing-stories/args
+// More on writing stories with args: https://storybook.js.org/docs/vue/writing-stories/args
 export const Primary = {
   args: {
     primary: true,
@@ -44,11 +49,4 @@ export const Small = {
     size: 'small',
     label: 'Button',
   },
-};
-
-export const ClickHandler = {
-  args: {
-    label: 'Button',
-    clickHandler: () => { alert("Clicked !") }
-  }
 };

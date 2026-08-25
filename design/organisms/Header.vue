@@ -7,19 +7,13 @@ defineProps({
     type: String,
     required: true
   },
-  loginHandler: {
-    type: Function
-  },
-  logoutHandler: {
-    type: Function
-  },
-  signUpHandler: {
-    type: Function
-  },
   user: {
-    type: Object
+    type: Object,
+    default: null
   }
 })
+
+defineEmits(['login', 'logout', 'signUp'])
 </script>
 
 <template>
@@ -45,28 +39,29 @@ defineProps({
         <h1>{{ title }}</h1>
       </div>
       <div>
-        <span class="welcome" v-if="user">
-          Welcome, <b>{{ user.name }}</b>!
-        </span>
-        <Button
-          v-if="user"
-          size="small"
-          label="Log out"
-          :click-handler="logoutHandler"
-        />
-        <Button
-          v-if="!user"
-          size="small"
-          label="Log in"
-          :click-handler="loginHandler"
-        />
-        <Button
-          v-if="!user"
-          primary
-          size="small"
-          label="Sign up"
-          :click-handler="signUpHandler"
-        />
+        <template v-if="user">
+          <span class="welcome">
+            Welcome, <b>{{ user.name }}</b>!
+          </span>
+          <Button
+            size="small"
+            label="Log out"
+            @click="$emit('logout')"
+          />
+        </template>
+        <template v-else>
+          <Button
+            size="small"
+            label="Log in"
+            @click="$emit('login')"
+          />
+          <Button
+            primary
+            size="small"
+            label="Sign up"
+            @click="$emit('signUp')"
+          />
+        </template>
       </div>
     </div>
   </header>

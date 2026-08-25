@@ -1,4 +1,5 @@
 <script setup>
+import { computed } from 'vue'
 import './button.css'
 
 const props = defineProps({
@@ -6,42 +7,35 @@ const props = defineProps({
     type: String,
     required: true,
   },
-  clickHandler: {
-    type: Function,
-  },
   primary: {
     type: Boolean,
     default: false,
   },
   size: {
     type: String,
-    validator: function (value) {
-      return ['small', 'medium', 'large'].indexOf(value) !== -1;
-    },
+    default: 'medium',
+    validator: (value) => ['small', 'medium', 'large'].includes(value),
   },
   backgroundColor: {
     type: String,
   },
 })
 
-const classes = {
-  'storybook-button': true,
-  'storybook-button--primary': props.primary,
-  'storybook-button--secondary': !props.primary,
-  [`storybook-button--${props.size || 'medium'}`]: true
-}
+const classes = computed(() => [
+  'storybook-button',
+  props.primary ? 'storybook-button--primary' : 'storybook-button--secondary',
+  `storybook-button--${props.size}`,
+])
 
-const style = {
-  backgroundColor: props.backgroundColor
-}
+const style = computed(() => ({
+  backgroundColor: props.backgroundColor,
+}))
 </script>
 
 <template>
   <button
     type="button"
-    @click="clickHandler"
     :class="classes"
     :style="style"
-  >{{ label }}
-  </button>
+  >{{ label }}</button>
 </template>
