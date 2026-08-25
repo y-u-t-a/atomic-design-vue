@@ -7,20 +7,6 @@
     "design",
     "apps/app-1"
   ],
-  "scripts": {
-    "storybook": "storybook dev -p 6006"
-  },
-  "dependencies": {
-    "vue": "^3.5.41"
-  },
-  "devDependencies": {
-    "@storybook/addon-links": "^10.5.10",
-    "@storybook/vue3": "^10.5.10",
-    "@storybook/vue3-vite": "^10.5.10",
-    "@vitejs/plugin-vue": "^6.0.8",
-    "storybook": "^10.5.10",
-    "vite": "^8.2.2"
-  },
   "devEngines": {
     "runtime": {
       "name": "node",
